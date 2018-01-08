@@ -20,10 +20,11 @@ Gem::Specification.new do |s|
   s.metadata = { "logstash_plugin" => "true", "logstash_group" => "input" }
 
   # Gem dependencies
-  s.add_runtime_dependency "logstash-core-plugin-api", ">= 1.60", "<= 2.99"
+  s.add_runtime_dependency "logstash-core", ">= 2.4.0", "< 3.0.0"
+  s.add_runtime_dependency "logstash-core-plugin-api", "= 1.60.5"
 
   s.add_runtime_dependency "logstash-codec-plain"
-  s.add_runtime_dependency "concurrent-ruby", "~> 1.0"
+  s.add_runtime_dependency "concurrent-ruby", [">= 0.9.2", "<= 1.0.0"]
   s.add_runtime_dependency "thread_safe", "~> 0.3.5"
   s.add_runtime_dependency "logstash-codec-multiline", ">= 2.0.5"
   s.add_runtime_dependency 'jar-dependencies', '~> 0.3.4'
@@ -33,7 +34,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "stud"
   s.add_development_dependency "pry"
   s.add_development_dependency "rspec-wait"
-  s.add_development_dependency "logstash-devutils"
+  s.add_development_dependency "logstash-devutils", [">= 0.0.22", "< 1.0.0"]
   s.add_development_dependency "logstash-codec-json"
   s.add_development_dependency "childprocess" # To make filebeat/LSF integration test easier to write.
 
